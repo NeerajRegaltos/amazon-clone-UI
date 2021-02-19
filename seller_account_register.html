@@ -21,7 +21,7 @@
   <link rel="stylesheet" href="css/bootstrap-drawer.min.css">
   <!-- Custom CSS -->
   <link rel="stylesheet" href="css/custom.css">
-  <title>Amazon : Navbar</title>
+  <title>Amazon : Register</title>
 </head>
 
 <body>
@@ -156,6 +156,52 @@
     </div>
   </nav> <!-- Navbar Ends -->
 
+  <!-- Seller Register Form Card Starts -->
+  <div class="container mb-5">
+    <div class="card mx-auto mt-5 pb-3 shadow rounded" style="width: 25rem;">
+      <div class="card-body">
+        <h4 class="card-title">Register Seller Account</h4>
+        <!-- Seller Register Form Start -->
+        <form class="needs-validation" autocomplete="off" method="post" action="#" novalidate>
+          <div class="form-group">
+            <label for="userName">Your name: </label>
+            <input type="text" name="name" class="form-control" value="Sandeep Ganguly" id="userName" disabled>
+          </div>
+          <div class="form-group">
+            <label for="userEmail">Email: </label>
+            <input type="email" name="email" class="form-control" value="ganguly@abc.com" id="userEmail" disabled>
+          </div>
+          <div class="form-group">
+            <label for="sellerName">Seller Name: </label>
+            <input type="text" class="form-control" placeholder="ABC Company Pvt Ltd." name="sellerName" id="sellerName"
+              aria-describedby="sellerNameHelp" required>
+            <small id="sellerNameHelp" class="form-text text-muted"><i class="fas text-primary fa-info"></i> Every
+              business have a name.</small>
+            <div class="valid-feedback">
+              <i class="far text-success fa-thumbs-up"></i> OK
+            </div>
+            <div class="invalid-feedback">
+              <i class="fas text-danger fa-exclamation-triangle"></i> Some error in seller name.
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="sellerDescription">Description</label>
+            <textarea class="form-control" name="sellerDescription" id="sellerDescription" rows="3" required></textarea>
+            <small id="sellerDescriptionHelp" class="form-text text-muted"><i class="fas text-primary fa-info"></i> 
+              Tell us about your business</small>
+            <div class="valid-feedback">
+              <i class="far text-success fa-thumbs-up"></i> OK
+            </div>
+            <div class="invalid-feedback">
+              <i class="fas text-danger fa-exclamation-triangle"></i> Some error in your description.
+            </div>
+          </div>
+          <button type="submit" class="btn btn-warning w-100 shadow btn-sm rounded">Create Seller Account</button>
+        </form> <!-- Seller Register Form Ends -->
+      </div>
+    </div>
+  </div> <!-- Seller Register Form Card Ends -->
+
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -171,6 +217,27 @@
   <script src="js/bootstrap-drawer.min.js"></script>
   <!-- Custom JavaScript -->
   <script src="js/custom.js"></script>
+
+  <script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function () {
+      'use strict';
+      window.addEventListener('load', function () {
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.getElementsByClassName('needs-validation');
+        // Loop over them and prevent submission
+        var validation = Array.prototype.filter.call(forms, function (form) {
+          form.addEventListener('submit', function (event) {
+            if (form.checkValidity() === false) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+          }, false);
+        });
+      }, false);
+    })();
+  </script>
 </body>
 
 </html>
